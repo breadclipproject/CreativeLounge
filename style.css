@@ -1,0 +1,513 @@
+:root {
+  --red-xd: #d55c5c;
+  --red-d: #ec8276;
+  --red-l: #ffa89e;
+  --red-xl: #ffcec1;
+
+  --orange-xd: #d56c51;
+  --orange-d: #e88d64;
+  --orange-l: #ffb784;
+  --orange-xl: #ffdfab;
+
+  --yellow-xd: #be9d66;
+  --yellow-d: #dfc37b;
+  --yellow-l: #ffea84;
+  --yellow-xl: #fdffc6;
+
+  --green-xd: #678b2e;
+  --green-d: #9eb030;
+  --green-l: #c9da45;
+  --green-xl: #f0ff7b;
+
+  --teal-xd: #2d908b;
+  --teal-d: #2ab083;
+  --teal-l: #49d18a;
+  --teal-xl: #a3eca1;
+
+  --blue-xd: #546dcc;
+  --blue-d: #609ae8;
+  --blue-l: #5bb6f1;
+  --blue-xl: #93e9fa;
+
+  --purple-xd: #8b59c7;
+  --purple-d: #ab6bdf;
+  --purple-l: #d991ff;
+  --purple-xl: #edb4ff;
+
+  --pink-xd: #be6cb3;
+  --pink-d: #df86be;
+  --pink-l: #faa4c6;
+  --pink-xl: #ffc6d6;
+
+  --white-xd: #a4a4a7;
+  --white-d: #c5c5c5;
+  --white-l: #e3e3e3;
+  --white-xl: #ffffff;
+
+  --black-xd: #6a6a6f;
+  --black-d: #848484;
+  --black-l: #a4a4a7;
+  --black-xl: #c5c5c5;
+
+  --outline: #211f33;
+}
+
+@font-face {
+  font-family: "neodgm";
+  src: url(./fonts/neodgm.woff) format("woff");
+  src: url(./fonts/neodgm.woff2) format("woff2");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: "neodgm";
+}
+
+body {
+  background-color: var(--outline);
+}
+
+#title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 4px;
+  outline: white;
+  color: var(--white-xl);
+  margin: 56px 0px 16px 0px;
+}
+
+#description {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--white-xl);
+}
+
+#notice {
+  font-style: italic;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 8px;
+  color: var(--red-d);
+}
+
+#slime-selector {
+  width: 196px;
+}
+
+#slime-selected {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: var(--white-xl);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#slime-selected-image {
+  width: 40px;
+  margin-bottom: 4px;
+}
+
+#slime-selected-text {
+  font-size: 16x;
+  margin-right: 8px;
+  color: var(--outline);
+}
+
+#slime-arrow {
+  color: var(--outline);
+  margin-right: 12px;
+  width: 12px;
+  transition: transform 0.5s;
+}
+
+#slime-list {
+  width: 100%;
+  border-radius: 4px;
+  background: var(--white-l);
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.slime-option {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px dashed var(--white-xl);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+#last-slime {
+  border-bottom: none;
+}
+
+.slime-option > img {
+  width: 40px;
+  margin-bottom: 4px;
+}
+
+.slime-option > p {
+  color: var(--outline);
+  margin-left: 4px;
+}
+
+.slime-option:hover {
+  background: var(--white-xl);
+}
+
+.slime-hide {
+  visibility: hidden;
+}
+
+.slime-arrow-rotate {
+  transform: rotate(180deg);
+}
+
+#background-selector {
+  width: 196px;
+}
+
+#background-selected {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: var(--white-xl);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#background-selected-image {
+  width: 24px;
+  margin-left: 8px;
+}
+
+#background-selected-text {
+  font-size: 16x;
+  margin-right: 4px;
+  color: var(--outline);
+}
+
+#background-arrow {
+  color: var(--outline);
+  margin-right: 12px;
+  width: 12px;
+  transition: transform 0.5s;
+}
+
+#background-list {
+  width: 100%;
+  border-radius: 4px;
+  background: var(--white-l);
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.background-option {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px dashed var(--white-xl);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+#last-background {
+  border-bottom: none;
+}
+
+.background-option > img {
+  width: 24px;
+  margin-left: 8px;
+}
+
+.background-option > p {
+  color: var(--outline);
+  margin-left: 12px;
+}
+
+.background-option:hover {
+  background: var(--white-xl);
+}
+
+.background-hide {
+  visibility: hidden;
+}
+
+.background-arrow-rotate {
+  transform: rotate(180deg);
+}
+
+#selector-container {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  top: 432px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
+canvas {
+  position: absolute;
+  top: 256px;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  z-index: -1;
+}
+
+#canvas5 {
+  z-index: 1;
+}
+
+#whiteboard {
+  background: var(--white-xl);
+}
+
+#color-container {
+  position: absolute;
+  width: 400px;
+  top: 744px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 160px;
+}
+
+#container > button {
+  border-color: var(--black-xd);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+#--red-xd {
+  background-color: var(--red-xd);
+}
+#--red-d {
+  background-color: var(--red-d);
+}
+#--red-l {
+  background-color: var(--red-l);
+}
+#--red-xl {
+  background-color: var(--red-xl);
+}
+
+#--orange-xd {
+  background-color: var(--orange-xd);
+}
+#--orange-d {
+  background-color: var(--orange-d);
+}
+#--orange-l {
+  background-color: var(--orange-l);
+}
+#--orange-xl {
+  background-color: var(--orange-xl);
+}
+
+#--yellow-xd {
+  background-color: var(--yellow-xd);
+}
+#--yellow-d {
+  background-color: var(--yellow-d);
+}
+#--yellow-l {
+  background-color: var(--yellow-l);
+}
+#--yellow-xl {
+  background-color: var(--yellow-xl);
+}
+
+#--green-xd {
+  background-color: var(--green-xd);
+}
+#--green-d {
+  background-color: var(--green-d);
+}
+#--green-l {
+  background-color: var(--green-l);
+}
+#--green-xl {
+  background-color: var(--green-xl);
+}
+
+#--teal-xd {
+  background-color: var(--teal-xd);
+}
+#--teal-d {
+  background-color: var(--teal-d);
+}
+#--teal-l {
+  background-color: var(--teal-l);
+}
+#--teal-xl {
+  background-color: var(--teal-xl);
+}
+
+#--blue-xd {
+  background-color: var(--blue-xd);
+}
+#--blue-d {
+  background-color: var(--blue-d);
+}
+#--blue-l {
+  background-color: var(--blue-l);
+}
+#--blue-xl {
+  background-color: var(--blue-xl);
+}
+
+#--purple-xd {
+  background-color: var(--purple-xd);
+}
+#--purple-d {
+  background-color: var(--purple-d);
+}
+#--purple-l {
+  background-color: var(--purple-l);
+}
+#--purple-xl {
+  background-color: var(--purple-xl);
+}
+
+#--pink-xd {
+  background-color: var(--pink-xd);
+}
+#--pink-d {
+  background-color: var(--pink-d);
+}
+#--pink-l {
+  background-color: var(--pink-l);
+}
+#--pink-xl {
+  background-color: var(--pink-xl);
+}
+
+#--white-xd {
+  background-color: var(--white-xd);
+}
+#--white-d {
+  background-color: var(--white-d);
+}
+#--white-l {
+  background-color: var(--white-l);
+}
+#--white-xl {
+  background-color: var(--white-xl);
+}
+
+#--black-xd {
+  background-color: var(--black-xd);
+}
+#--black-d {
+  background-color: var(--black-d);
+}
+#--black-l {
+  background-color: var(--black-l);
+}
+#--black-xl {
+  background-color: var(--black-xl);
+}
+
+#tool-container {
+  position: absolute;
+  top: 852px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tool-container > button {
+  width: 196px;
+  height: 40px;
+  border-radius: 4px;
+  font-family: "neodgm";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#outline {
+  color: var(--white-xl);
+  border-color: var(--white-xl);
+  background-color: var(--outline);
+}
+
+#eraser {
+  color: var(--outline);
+  background-color: var(--white-xl);
+}
+
+#setting-container {
+  position: absolute;
+  top: 900px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#setting-container > button {
+  width: 196px;
+  height: 40px;
+  border-radius: 4px;
+  font-family: "neodgm";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#reset {
+  color: var(--white-xl);
+  border-color: var(--red-xl);
+  background-color: var(--red-xd);
+}
+
+#download {
+  color: var(--white-xl);
+  border-color: var(--teal-xl);
+  background-color: var(--teal-xd);
+}
