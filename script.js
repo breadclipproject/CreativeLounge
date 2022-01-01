@@ -107,8 +107,8 @@ function createGrid(){
 createGrid();
 
 const slimeFiles = [
-    "sprites/Slime_01.png",
-    "sprites/Slime_02.png",
+    "sprites/Border.png",
+    "sprites/Filled.png",
     "sprites/Slime_03.png",
     "sprites/Slime_04.png",
     "sprites/Slime_05.png",
@@ -141,9 +141,9 @@ slimeSelected.addEventListener('click', function(){
 
 for(let slimeOption of slimeOptions){
 slimeOption.addEventListener('click', function(){
-    if(backgroundNum == findColorNum(this.textContent) ){
-        window.alert("배경과 동일한 색상의 슬라임은 선택할 수 없습니다.\nYou cannot select a slime with the same color as the background.");
-    }else{
+    // if(backgroundNum == findColorNum(this.textContent) ){
+    //     window.alert("배경과 동일한 색상의 슬라임은 선택할 수 없습니다.\nYou cannot select a slime with the same color as the background.");
+    // }else{
         slimeList.classList.toggle('slime-hide');
         slimeArrow.classList.toggle('slime-arrow-rotate');
         slimeSelectedText.innerHTML = this.textContent;
@@ -154,7 +154,7 @@ slimeOption.addEventListener('click', function(){
         slimeOpen = !slimeOpen;
         slimeNum = findColorNum(this.textContent);
         setZIndex();
-    }
+    // }
 })
 }
 
@@ -167,9 +167,9 @@ backgroundSelected.addEventListener('click', function(){
 
 for(let backgroundOption of backgroundOptions){
 backgroundOption.addEventListener('click', function(){
-    if(slimeNum == findColorNum(this.textContent)){
-        window.alert("슬라임과 동일한 색상의 배경은 선택할 수 없습니다.\nYou cannot select a background with the same color as the slime.");
-    }else{
+    // if(slimeNum == findColorNum(this.textContent)){
+    //     window.alert("슬라임과 동일한 색상의 배경은 선택할 수 없습니다.\nYou cannot select a background with the same color as the slime.");
+    // }else{
     backgroundList.classList.toggle('background-hide');
     backgroundArrow.classList.toggle('background-arrow-rotate');
     backgroundSelectedText.innerHTML = this.textContent;
@@ -180,7 +180,7 @@ backgroundOption.addEventListener('click', function(){
     backgroundOpen = !backgroundOpen;
     backgroundNum = findColorNum(this.textContent);
     setZIndex();
-}
+// }
 })
 }
 
@@ -193,9 +193,9 @@ function setZIndex(){
 }
 
 function findColorNum(str){
-    if(str.includes('Red')){
+    if(str.includes('Border') || str.includes('Red')){
         return 0;
-    }else if(str.includes('Orange')){
+    }else if(str.includes('Filled')|| str.includes('Orange')){
         return 1;
     }else if(str.includes('Yellow')){
         return 2;
@@ -319,11 +319,11 @@ settingContainer.addEventListener('click', function(e){
         if(!isCanvasBlank(canvas1) && !isCanvasBlank(canvas2) && !isCanvasBlank(canvas3)){
             downloadImage();}else{
                 if(isCanvasBlank(canvas2)){
-                    window.alert("슬라임을 선택해주세요!\nSelect a slime!");
+                    window.alert("\nSelect a BreadClip!");
                 }else if(isCanvasBlank(canvas1)){
-                    window.alert("배경을 선택해주세요!\nSelect a background!");
+                    window.alert("\nSelect a background!");
                 }else if(isCanvasBlank(canvas3)){
-                    window.alert("슬라임을 꾸며주세요!\nDecorate a slime!");
+                    window.alert("\nDecorate a BreadClip!");
                 }
             }
     }else if(e.target.getAttribute('id') == 'reset'){
@@ -331,7 +331,7 @@ settingContainer.addEventListener('click', function(e){
         ctx2.clearRect(0,0,canvas2.width,canvas2.height);
         ctx3.clearRect(0,0,canvas3.width,canvas3.height);
 
-        slimeSelectedText.innerHTML = "Select a Slime";
+        slimeSelectedText.innerHTML = "Select a BreadClip";
         slimeSelectedImage.src = slimeFiles[0];
         backgroundSelectedText.innerHTML = "Select a BG";
         backgroundSelectedImage.src = backgroundFiles[0];
